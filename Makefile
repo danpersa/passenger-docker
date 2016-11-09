@@ -1,4 +1,4 @@
-NAME = phusion/passenger
+NAME = danpersa/passenger
 VERSION = 0.9.19
 
 .PHONY: all build_all \
@@ -67,6 +67,13 @@ build_nodejs:
 	echo nodejs=1 >> nodejs_image/buildconfig
 	echo final=1 >> nodejs_image/buildconfig
 	docker build -t $(NAME)-nodejs:$(VERSION) --rm nodejs_image
+
+build_nodejs7:
+	rm -rf nodejs_image_7
+	cp -pR image nodejs_image_7
+	echo nodejs7=1 >> nodejs_image/buildconfig
+	echo final=1 >> nodejs_image/buildconfig
+	docker build -t $(NAME)-nodejs7:$(VERSION) --rm nodejs_image_7
 
 build_full:
 	rm -rf full_image
