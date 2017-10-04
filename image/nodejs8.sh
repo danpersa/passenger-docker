@@ -4,7 +4,7 @@ source /pd_build/buildconfig
 set -x
 
 ## Install Node.js (also needed for Rails asset compilation)
-curl -sL https://deb.nodesource.com/setup_7.x | bash -
+curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get install -y build-essential
 apt-get install -y nodejs
 
